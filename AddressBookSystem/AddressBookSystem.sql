@@ -23,5 +23,6 @@ INSERT INTO AddressBook(firstname, lastname, address, city, state, zip, phoneNo,
 ('Ashwini','Garad','Navi Peth','Pune','Maha','413041','8767898778','ashwini123@gmail.com');
 
 select * from AddressBook;
+UPDATE AddressBook SET state = 'Maha' , zip = '412334',city = 'New Mumbai' WHERE firstname = 'Riya' AND lastname = 'Sharma';
 
 
