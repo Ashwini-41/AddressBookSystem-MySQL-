@@ -1,6 +1,7 @@
 create database address_book_service;
 use address_book_service;
 select database();
+
 create table AddressBook(
 id int auto_increment primary key,
 firstname varchar(50),
@@ -23,12 +24,17 @@ INSERT INTO AddressBook(firstname, lastname, address, city, state, zip, phoneNo,
 ('Ashwini','Garad','Navi Peth','Pune','Maha','413041','8767898778','ashwini123@gmail.com');
 
 select * from AddressBook;
+
 UPDATE AddressBook SET state = 'Maha' , zip = '412334',city = 'New Mumbai' WHERE firstname = 'Riya' AND lastname = 'Sharma';
+
 Delete from AddressBook where firstname = 'Rohn' AND lastname = 'Doe';
+
 Select * from AddressBook where city = 'Lucknow' OR state = 'Maha';
 Select city,state, count(*) AS total_contacts from AddressBook group by city,state;
 Select * from AddressBook where city = 'Pune'order by firstname,lastname asc;
+
 Alter Table AddressBook ADD COLUMN BookName VARCHAR(50) after id,ADD COLUMN BookType VARCHAR(50) after id;
+
 update AddressBook set BookType = 'Family' where firstname = 'Ashwini' OR firstName = 'Riya';
 update AddressBook set BookType = 'Friends' where firstname = 'Siya' OR firstName = 'shree';
 update AddressBook set BookType = 'Profession' where firstname = 'Bill';
@@ -39,7 +45,12 @@ update AddressBook set BookName = 'ProfessionBook' where firstname = 'Bill';
 
 select BookType , count(*) as total_contacts from Addressbook group by BookType; 
 
+Insert into AddressBook(BookType,BookName,firstname,lastname,address,city,state,zip,phoneNo,email) values
+('Profession','ProfessionalBook','Aditi','Jadhav','12 bhosari' ,'Mumbai','Maha',345445,'8789877898','jadhav12@gmail.com');
+Insert into AddressBook values(8,'Family','FamilyBook','Ajinkya','Gore','Adarsh nagar','Solapur','Guj','413256','9878787878','ajgar12@gmail.com');
 
+Insert into AddressBook(BookType,BookName,firstname,lastname,address,city,state,zip,phoneNo,email) values
+('Friends','FriendsBook','Vaishu','Chavan','62 Taljai' ,'Dharashiv','Maha',858745,'9789877698','chavan12@gmail.com');
 
 
 
