@@ -27,5 +27,6 @@ UPDATE AddressBook SET state = 'Maha' , zip = '412334',city = 'New Mumbai' WHERE
 Delete from AddressBook where firstname = 'Rohn' AND lastname = 'Doe';
 Select * from AddressBook where city = 'Lucknow' OR state = 'Maha';
 Select city,state, count(*) AS total_contacts from AddressBook group by city,state;
+Select * from AddressBook where city = 'Pune'order by firstname,lastname asc;
 
 
